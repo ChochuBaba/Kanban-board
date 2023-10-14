@@ -5,12 +5,10 @@ import { createReducer } from "@reduxjs/toolkit";
 export const SelectDataReducer = createReducer({}, (builder) => {
   builder
     .addCase('OPERATION_OK', (state, action) => {
-      state.loading = false;
       state.finalData = action.payload.finalData;
       state.icon = action.payload.icon;
     })
     .addCase('OPERATION_FAIL', (state, action) => {
-      state.loading = false;
       state.finalData = [];
       state.message = action.payload.message;
     });

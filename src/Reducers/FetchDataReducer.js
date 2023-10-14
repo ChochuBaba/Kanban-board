@@ -5,12 +5,10 @@ import { createReducer } from "@reduxjs/toolkit";
 export const FetchDataReducer = createReducer({}, (builder) => {
   builder
     .addCase('FETCH_OK', (state, action) => {
-      state.loading = false;
       state.Tickets = action.payload.tickets;
       state.Users = action.payload.users;
     })
     .addCase('FETCH_FAIL', (state) => {
-      state.loading = false;
       state.Tickets = [];
       state.Users = [];
     });
